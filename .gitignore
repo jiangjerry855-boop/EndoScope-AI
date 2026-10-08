@@ -227,3 +227,10 @@ __marimo__/
 
 # Generated inference exports
 endo_result_*/
+
+# Reproducible check outputs
+/validation/
+
+# Reconstructed by scripts/serve_browser.py (parts remain tracked)
+/web/assets/vendor/ort-wasm-simd-threaded.wasm
+/web/assets/vendor/ort-wasm-simd-threaded.wasm.tmp

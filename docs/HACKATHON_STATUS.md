@@ -1,36 +1,35 @@
 # Hackathon readiness record
 
-Reviewed on October 8, 2026 (UTC). This is a technical status record, not a completed submission or a substitute for the Devpost Learn planning documents.
+Updated October 8, 2026 UTC. This records completed technical work and remaining entrant actions; it is not a completed competition submission.
 
-## Confirmed
+## Implemented in this increment
 
-- The GitHub repository is public.
-- A complete MIT `LICENSE` is present and GitHub detects it as MIT.
-- The desktop application source, required model checkpoint, and dependency list are present.
-- The exact cloned checkpoint passed CPU inference and PNG/JSON export checks on one 599 × 507 sample image at thresholds 0.40, 0.85, and 0.20, producing 4, 1, and 3 candidate regions respectively. The check used Python 3.12.14 and PyTorch 2.6.0+cpu. This verifies a basic execution path, not detection accuracy.
-- The demo page and browser-demo entry point returned HTTP 200 without signing in. Browser interactions were not tested in this check.
-- The README now describes setup, operation, exports, and the limits of the repository.
-- The `1-start` onboarding interview has been completed in the current AI-assisted workflow. Its personal learning context is kept separate from public project documentation.
-- Personal onboarding context is excluded from Git commits by `/devpost/learner-profile.md` in `.gitignore`.
+- Approved `devpost/scope.md`, prospective `prd.md` and `spec.md`, factual progress checklist, and offline `app-map.html`. The detailed PRD/spec remain agent-authored drafts under explicit user delegation; detailed learner review was not performed.
+- Complete static browser source and assets in `web/`: trained ONNX model, vendored WASM runtime and MIT license, five credited samples, walkthrough recording, EN/ZH captions and English-captioned MP4.
+- Public-domain desktop example, so **Load test example** works after repository download.
+- Three-step teaching guide, explanation of threshold/region behavior, image request ordering, and guards against stale results and exports.
+- Reproducible desktop inference/export, real WASM computation, asset/hash and simulated UI-state checks. See `docs/VALIDATION.md` for executed results and limits.
+- README instructions for browser and desktop use. Browser use needs only a static HTTP server; no ML installation is needed for that path.
+- Original model weights and desktop behavior preserved. Private learner context remains excluded from Git by `/devpost/learner-profile.md`.
 
-## Still required
+## Still required before claiming submission readiness
 
-- Verify a fresh dependency installation and the native desktop interface on the intended platform. The current repository check exercised inference and export in an existing environment, without opening the GUI.
-- Agree on the project scope through the Skill Pack interview, then save and review a substantive `devpost/scope.md`.
-- Complete and review `devpost/prd.md` and `devpost/spec.md` through the corresponding skills.
-- Implement and verify the agreed work, record real progress in `devpost/checklist.md`, and complete hands-on review and the app map. Do not mark unperformed work complete.
-- If the browser application forms part of the submitted project, include its required source and assets in the public code repository with run instructions.
-- Upload a demonstration video shorter than three minutes to YouTube or Vimeo and make it publicly visible. A project-hosted video page alone does not meet that hosting requirement.
-- Have the entrant write the submission fields and exit-survey answers. The curriculum permits AI spelling and grammar corrections, not AI-written replacements.
-- Check the final entry, confirm its links work for a signed-out reviewer, and submit on Devpost before the deadline.
+- Entrant tries the published browser app and/or intended desktop platform, opens the exports, and supplies feedback. Live browser UI, actual download behavior and a fresh desktop dependency installation have not been verified in this increment.
+- Entrant reviews the detailed planning and app map. Delegating implementation is not evidence that those learning activities were completed.
+- Upload the demonstration to **YouTube or Vimeo** and make it publicly visible, then put that URL in the submission. The included 32.67-second English MP4 is prepared for upload. A project-hosted video alone does not satisfy the required hosting destination.
+- Entrant writes their own personal submission responses and exit survey, reflecting work actually performed. The curriculum permits AI spelling/grammar help; do not invent personal experience or a completed planning interview.
+- Disclose the earlier prototype and model and confirm organizer acceptance if eligibility remains uncertain. Added planning files do not establish eligibility.
+- Verify the actual submission links for a signed-out reviewer, review the final entry, and submit it on Devpost. This workflow has not submitted an entry or contacted the organizer.
 
 ## Development history
 
-The desktop prototype and hosted demonstrations existed before this actual Devpost Learn onboarding. They must not be described as having been created from the planning documents that will be written afterward. Record subsequent planning and implementation accurately, disclose incorporated prior work, and obtain organizer clarification if eligibility remains uncertain. This record does not establish or guarantee eligibility.
+The desktop prototype, model and initial hosted demonstration existed before the Devpost Learn planning phase. This phase first gathered the intended audience (medical-department teaching/research at Chongqing University), polyp-image use case and scope approval, then the entrant delegated detailed technical completion. The PRD/spec were saved before the repository/browser increment. No institutional adoption, affiliation or endorsement is claimed.
 
-## Official references
+The new work packages the browser implementation, adds a usable example and teaching guidance, protects result state, supplies repeatable checks and prepares sharing material. Do not describe the planning documents as having guided earlier model development.
 
-- [Hackathon rules](https://learn-ai-basics.devpost.com/rules)
-- [Devpost Learn Skill Pack and workflow](https://github.com/challengepost/learn-ai-basics)
+## Official references checked October 8, 2026 UTC
 
-The rules require a new project using the Skill Pack, an end-to-end working function, substantive scope/PRD/spec documents, a public repository with necessary code/assets/run instructions and an open-source license, and a public YouTube or Vimeo demo. The submission deadline is October 26, 2026 at 5:00 p.m. Eastern Time (4:00 p.m. Chicago time).
+- [Official rules](https://learn-ai-basics.devpost.com/rules)
+- [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics)
+
+Rules require a new working project using the Skill Pack, substantive planning documents, a public open-source repository containing necessary source/assets/instructions, English materials and a publicly visible YouTube/Vimeo demonstration shorter than three minutes. Deadline: **October 26, 2026, 5 p.m. Eastern / 4 p.m. Chicago**. The rules require disclosure of incorporated pre-existing work; acceptance is determined by the organizer.

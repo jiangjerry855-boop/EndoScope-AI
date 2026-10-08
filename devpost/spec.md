@@ -16,7 +16,7 @@ An image is reduced to the model's input size while keeping its proportions. The
 ## Where It Runs and How Someone Tries It
 
 - Desktop: Python with Tkinter; install `requirements.txt`, then run `python app.py`.
-- Browser, from a repository checkout: `python -m http.server 8000 --directory web`; open `http://localhost:8000/try/`. Do not open the HTML using a `file:` URL.
+- Browser, from a repository checkout: `python scripts/serve_browser.py`; open `http://localhost:8000/try/`. Do not open the HTML using a `file:` URL.
 - Public browser URL: https://endoscope-ai-demo.jiangjerry855.chatgpt.site/try/
 - Walkthrough URL: https://endoscope-ai-demo.jiangjerry855.chatgpt.site/
 - Public source: https://github.com/jiangjerry855-boop/EndoScope-AI
@@ -31,7 +31,7 @@ Keep `app.py` and `endo/` as the desktop application. Preserve the current Compa
 
 Implements `prd.md > Screens and Layout`, `Threshold Exploration`, and `Export`.
 
-Copy the current static Site into `web/`, retaining the same root-relative paths. `web/try/app.js` owns the image, active request, displayed result, and export buttons. Add a three-step instructional section and concise threshold explanation. Make image/sample request ordering explicit so an older request cannot replace a newer image. Clear or disable stale results on failures and while a new result is pending.
+Copy the current static Site into `web/`, retaining the same root-relative paths. The 14 MB WASM binary is stored in two parts to fit the repository connector’s per-request limit. `scripts/serve_browser.py` reconstructs the byte-identical file with SHA-256 verification before starting Python’s built-in HTTP server. This is packaging only; browser inference code and runtime bytes are unchanged. `web/try/app.js` owns the image, active request, displayed result, and export buttons. Add a three-step instructional section and concise threshold explanation. Make image/sample request ordering explicit so an older request cannot replace a newer image. Clear or disable stale results on failures and while a new result is pending.
 
 ## Browser Inference Worker
 

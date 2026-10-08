@@ -1,0 +1,66 @@
+[
+  {
+    "start": 0,
+    "end": 5.5,
+    "en": "Compare the two views",
+    "zh": "对比原图与预测图",
+    "caption_en": "Sample loaded. Original image on the left; model prediction on the right.",
+    "caption_zh": "示例图片已加载。左侧为原图，右侧为模型的预测结果。"
+  },
+  {
+    "start": 5.5,
+    "end": 9,
+    "en": "Read the candidate regions",
+    "zh": "查看候选区域",
+    "caption_en": "Green pixels and boxes mark polyp candidates at threshold 0.40.",
+    "caption_zh": "绿色覆盖显示选中的像素。阈值为 0.40 时，边框和表格展示各个候选区域。"
+  },
+  {
+    "start": 9,
+    "end": 16.5,
+    "en": "Review the current settings",
+    "zh": "检查当前设置",
+    "caption_en": "Inspect model settings and region measurements. Scores are not disease probabilities.",
+    "caption_zh": "当前阈值保持在 0.40。查看覆盖图、模型设置及候选区域的数据。"
+  },
+  {
+    "start": 16.5,
+    "end": 21.5,
+    "en": "Run the analysis again",
+    "zh": "重新运行分析",
+    "caption_en": "Run analysis again at 0.40. Four candidate regions appear.",
+    "caption_zh": "保持相同阈值并重新运行分析。预测结果刷新，表格列出四个候选区域。"
+  },
+  {
+    "start": 21.5,
+    "end": 23.5,
+    "en": "Raise the threshold",
+    "zh": "提高分割阈值",
+    "caption_en": "Raise the threshold to 0.85. Rerun.",
+    "caption_zh": "将阈值从 0.40 提高到 0.85，然后重新运行分析。"
+  },
+  {
+    "start": 23.5,
+    "end": 27.5,
+    "en": "Inspect the smaller mask",
+    "zh": "查看缩小的分割区域",
+    "caption_en": "At 0.85, the mask shrinks to one region. Inspect its measurements.",
+    "caption_zh": "阈值为 0.85 时，选中的像素减少，仅保留一个候选区域。查看其得分、边框坐标和面积。"
+  },
+  {
+    "start": 27.5,
+    "end": 29.6,
+    "en": "Lower the threshold",
+    "zh": "降低分割阈值",
+    "caption_en": "Lower to 0.20. Run analysis again.",
+    "caption_zh": "将阈值降低至 0.20，再次运行分析，以纳入更多像素。"
+  },
+  {
+    "start": 29.6,
+    "end": 32.7,
+    "en": "Compare the final result",
+    "zh": "对比最终结果",
+    "caption_en": "Three candidate regions appear. Research use only.",
+    "caption_zh": "覆盖区域扩大，表格列出三个连通的候选区域。这些是模型输出，不是诊断结论。"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "name": "EndoScope AI Compact U-Net",
+  "input_size": 160,
+  "parameters": 274849,
+  "trained_epoch": 39,
+  "supported_class": "polyp",
+  "research_only": true,
+  "checkpoint_sha256": "dcac0ac697b8fe0a69474d650bd5529bdc0df30fa73c3cb51b97ea4f80ed093e",
+  "onnx_sha256": "d08600f05953829ff7ddc3648cb16a460b460090ce5004829667b042a22fc992",
+  "opset": 17,
+  "export_checks": [
+    {
+      "image": "01_polyp.jpg",
+      "max_absolute_probability_error": 1.2516975402832031e-05
+    },
+    {
+      "image": "02_sessile_polyp.jpg",
+      "max_absolute_probability_error": 8.58306884765625e-06
+    },
+    {
+      "image": "03_colon_polyp.jpg",
+      "max_absolute_probability_error": 7.718801498413086e-06
+    },
+    {
+      "image": "04_sessile_polyp.jpg",
+      "max_absolute_probability_error": 2.562999725341797e-06
+    },
+    {
+      "image": "05_stalked_polyp.jpg",
+      "max_absolute_probability_error": 1.1920928955078125e-06
+    }
+  ],
+  "runtime": "ONNX Runtime Web 1.30.0",
+  "notice": "Scores are uncalibrated activations, not disease probabilities."
+}

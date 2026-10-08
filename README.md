@@ -1,6 +1,6 @@
 # EndoScope AI
 
-EndoScope AI is a Python desktop research prototype that marks candidate polyp regions in endoscopic images with a compact U-Net model. It displays the original image alongside a segmentation overlay, lists candidate regions, and exports the results.
+EndoScope AI is a browser and Python desktop research prototype that marks candidate polyp regions in endoscopic images with a compact U-Net model. It displays the original image alongside a segmentation overlay, lists candidate regions, and exports the results.
 
 **Research and education only. It is not a diagnostic device.** Model scores are not disease probabilities, and an empty prediction does not establish a normal examination. Inflammation and ulcer detection are not implemented.
 
@@ -9,7 +9,19 @@ EndoScope AI is a Python desktop research prototype that marks candidate polyp r
 - [Demo video page with English and Chinese captions](https://endoscope-ai-demo.jiangjerry855.chatgpt.site/)
 - [Browser demonstration](https://endoscope-ai-demo.jiangjerry855.chatgpt.site/try/)
 
-This repository currently contains the **Python desktop application**. The separately hosted browser demonstration is not built from the files in this repository.
+This repository includes both the **Python desktop application** and the complete **browser demonstration** in `web/`, including the model, local runtime, samples, and captions.
+
+## Run the browser application
+
+From the project folder, run:
+
+```sh
+python scripts/serve_browser.py
+```
+
+Open **http://localhost:8000/try/**. On Windows, use `py` instead of `python` if needed. This path uses Python’s built-in server; it needs no Python ML packages, Node, build step, API key, or account. Keep the server running while using the app; opening HTML directly with `file:` will not work. The model and inference engine are included in the download. The launcher reassembles two bundled runtime parts and verifies their SHA-256 hashes; it downloads nothing. User images are processed locally.
+
+Choose an example, click **Run analysis**, change the threshold, and download **Overlay PNG**, **Mask PNG**, or **Results JSON**. The browser automatically updates thresholds after the first analysis. Large permitted images are resized locally; exported coordinates refer to the working image, and JSON includes the original dimensions.
 
 ## Run the desktop application
 
@@ -65,7 +77,7 @@ Each export creates a timestamped subfolder containing:
 - `mask.png`: a binary mask, with selected pixels shown in white.
 - `result.json`: settings, model hash, timing, and candidate-region measurements.
 
-The **Load test example** button looks for JPG files inside an `examples/` folder. No example images are currently bundled in this repository; use **Open endoscopy image**, or add your own permitted JPG images to `examples/` locally.
+The **Load test example** button loads the bundled public-domain photograph in `examples/`. Its source and attribution are in [examples/README.md](examples/README.md). Five credited browser examples are included; they have no ground-truth masks and cannot measure accuracy.
 
 ## Model and processing
 
@@ -98,6 +110,11 @@ This repository supports running the bundled model. It does not yet contain the 
 | `models/training_metadata.json` | Recorded model and training information |
 | `models/history.csv` | Training history |
 | `requirements.txt` | Python dependencies |
+| `web/` | Complete static browser demo, model, runtime, samples, and video |
+| `examples/` | Credited desktop demonstration input |
+| `scripts/` | Reproducible inference, export, state checks, and captioned-video preparation |
+| `devpost/` | Planning documents, factual progress checklist, and offline code map |
+| `docs/VALIDATION.md` | Executed checks and remaining verification limits |
 | `docs/HACKATHON_STATUS.md` | Verified repository readiness and remaining submission work |
 
 ## Troubleshooting
@@ -105,14 +122,28 @@ This repository supports running the bundled model. It does not yet contain the 
 - **A package is missing:** install requirements using the same `.venv` Python that launches the application.
 - **Tkinter is missing:** install or repair Python with Tcl/Tk support. Tkinter is not installed by `pip install -r requirements.txt`.
 - **The model is missing:** make sure the extracted repository contains `models/polyp_unet.pt`, or select the bundled checkpoint with **Choose trained checkpoint**.
-- **The example button finds nothing:** use **Open endoscopy image**; the repository does not include example images.
+- **The example button finds nothing:** use **Open endoscopy image**; confirm `examples/01_polyp.jpg` was extracted.
 - **Results disappear after changing settings:** rerun the analysis so the displayed results match the selected threshold and checkpoint.
 
 ## Development and hackathon status
 
 The existing prototype was built before the Devpost Learn Skill Pack onboarding used in the current workflow. New documents will describe the actual subsequent planning and development; they will not be presented as plans that guided the earlier prototype.
 
-The required Skill Pack planning and build stages are still in progress. See [the readiness record](docs/HACKATHON_STATUS.md) for the remaining work. A publicly hosted project website is separate from the required YouTube or Vimeo submission video.
+Scope was approved; the PRD/specification were written before this increment under the entrant’s explicit delegation. Browser packaging, teaching guidance, result-state fixes, and reproducible checks are now implemented. Detailed learner review, final hands-on exploration, and submission remain open. See [the readiness record](docs/HACKATHON_STATUS.md) and [verification record](docs/VALIDATION.md).
+
+The 33-second recording and an English-captioned MP4 are in `web/assets/`. [Download the English-captioned video](https://endoscope-ai-demo.jiangjerry855.chatgpt.site/assets/endoscope-demo-en.mp4). It shows actual desktop inference and threshold changes; it starts with a loaded image and does not show completed export. A project-hosted video does not replace the required public YouTube/Vimeo URL.
+
+## Reproduce the checks
+
+With the Python ML requirements installed, run:
+
+```sh
+python scripts/verify_project.py
+node scripts/check_browser.mjs
+node scripts/check_ui_state.mjs
+```
+
+Node is needed only for developer checks, not for using the browser app. The WASM check uses the bundled runtime and generated reference files; no npm install is needed. Generated evidence and sample exports go to ignored `validation/`. These checks do not open a real browser or desktop GUI. Open `devpost/app-map.html` for an offline guide to the code.
 
 ## License
 

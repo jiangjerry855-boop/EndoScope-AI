@@ -1,0 +1,18 @@
+{
+  "filename": "ort-wasm-simd-threaded.wasm",
+  "runtime": "ONNX Runtime Web 1.30.0",
+  "size": 14239897,
+  "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2",
+  "parts": [
+    {
+      "path": "wasm-parts/engine.001",
+      "size": 7200000,
+      "sha256": "27dcc19f353c3e9738f8f1c949ce5839ff9c5751265a07c07b03cca2c6839d4a"
+    },
+    {
+      "path": "wasm-parts/engine.002",
+      "size": 7039897,
+      "sha256": "d3c72c8f1daa349def276bf14b24046a3328ed01405b4be48a6c8933076d7c1b"
+    }
+  ]
+}
