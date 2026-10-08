@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Devpost learning context and local credentials
+/devpost/learner-profile.md
+.env
+.env.*
+!.env.example
+
+# Generated inference exports
+endo_result_*/
