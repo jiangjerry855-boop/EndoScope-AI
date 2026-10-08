@@ -1,6 +1,6 @@
 ---
 doc: scope
-status: draft
+status: approved
 ---
 
 # EndoScope AI
@@ -46,7 +46,7 @@ The demonstration makes the effect of changing the threshold visible. A working 
 - Clear setup and usage instructions, permitted demonstration material, and verification of the demonstrated workflow.
 - Images processed on the user's device by the demonstration, without an image-upload backend.
 
-The proposed next increment is to make the existing demonstrations reproducible from the public repository, supply a permitted example for the sample-image workflow, and complete the agreed checks and documentation. The PRD and technical plan must be reviewed before implementing this increment.
+The agreed next increment is to make the existing demonstrations reproducible from the public repository, supply a permitted example for the sample-image workflow, and complete the agreed checks and documentation. The PRD and technical plan must be reviewed before implementing this increment.
 
 ## Later
 
@@ -61,6 +61,6 @@ Further features and model improvements are undecided and require a separate sco
 
 ## Planning History
 
-This draft was written after the learner identified the audience, requested polyp identification, and approved a teaching/research demonstration. It is awaiting review; that earlier approval of the use case was not approval of this complete scope.
+This scope was written after the learner identified the audience, requested polyp identification, and approved a teaching/research demonstration. On October 7, 2026 (America/Chicago), the learner reviewed the four-point scope summary and linked document and replied "可以" (approved). This marks approval of the scope; the PRD and technical specification remain to be developed.
 
 The prototype and hosted demos predate this Skill Pack planning phase. This document plans the subsequent increment and does not claim to have guided earlier implementation. Hackathon eligibility is not established by adding this file.
