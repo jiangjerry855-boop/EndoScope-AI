@@ -1,0 +1,26 @@
+{
+  "config": {
+    "data": "data/kvasir",
+    "output": "models",
+    "epochs": 40,
+    "size": 160,
+    "base": 12,
+    "batch_size": 16,
+    "threads": 4,
+    "seed": 20261006,
+    "device": "cpu"
+  },
+  "counts": {
+    "train": 800,
+    "val": 100,
+    "test": 100
+  },
+  "positive_weight": 4.0,
+  "best_val_dice_at_model_resolution": 0.6663314268738031,
+  "parameter_count": 274849,
+  "training_seconds": 1186.596709006,
+  "torch_version": "2.14.1+cu130",
+  "numpy_version": "2.3.5",
+  "model_sha256": "dcac0ac697b8fe0a69474d650bd5529bdc0df30fa73c3cb51b97ea4f80ed093e",
+  "manifest_sha256": "54ca1200b1461d2258e44c3903cd8449575785eccb17b3b8527264764a2a1e30"
+}
